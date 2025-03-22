@@ -8,6 +8,7 @@ import {
 
 const searchform = document.querySelector('.form');
 const gallery = document.querySelector('.gallery');
+const loader = document.querySelector('.loader');
 
 searchform.addEventListener('submit', toSearch);
 

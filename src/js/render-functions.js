@@ -3,6 +3,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+const loader = document.querySelector('.loader');
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
 });
@@ -43,14 +44,9 @@ export function showErrorMessage(message) {
 }
 
 export function showLoadingIndicator() {
-  const loader = document.createElement('div');
-  loader.className = 'loader';
-  document.body.appendChild(loader);
+  loader.classList.remove('visually-hidden');
 }
 
 export function hideLoadingIndicator() {
-  const loader = document.querySelector('.loader');
-  if (loader) {
-    document.body.removeChild(loader);
-  }
+  loader.classList.add('visually-hidden');
 }
