@@ -33,9 +33,10 @@ function toSearch(event) {
       }
       createMarkup(hits, gallery);
     })
-    .catch(error =>
-      showErrorMessage('Failed to load images. Please try again!')
-    )
+    .catch(error => {
+      showErrorMessage('Failed to load images. Please try again!');
+      console.error(error);
+    })
     .finally(() => {
       hideLoadingIndicator();
     });
