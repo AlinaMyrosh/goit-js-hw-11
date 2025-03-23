@@ -31,8 +31,12 @@ function toSearch(event) {
           'Sorry, there are no images matching your search query. Please try again!'
         );
       }
-      hideLoadingIndicator();
       createMarkup(hits, gallery);
     })
-    .catch(error => console.log(error));
+    .catch(error =>
+      showErrorMessage('Failed to load images. Please try again!')
+    )
+    .finally(() => {
+      hideLoadingIndicator();
+    });
 }
